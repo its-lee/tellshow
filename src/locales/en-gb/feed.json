@@ -1,4 +1,5 @@
 {
+  "homepage": "Source and attributions",
   "feeds": {
     "theExploringSeries": "The Exploring Series",
     "wineAndCrime": "Wine & Crime",
@@ -11,6 +12,7 @@
   },
   "description": "Published on {date} at {url}",
   "proxy": {
-    "help": "No content? Click here to gain access."
-  }
+    "help": "No content? Visit the following URL to gain access:"
+  },
+  "error": "An error has occurred while requesting the RSS feed"
 }

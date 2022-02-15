@@ -25,8 +25,8 @@
     </div>
 
     <div class="flex-none hidden md:block py-3 px-3 text-left">
-      <a :href="proxyAccessUrl" target="_blank" class="block text-gray-500 border-t-2 py-3">{{
-        $t('feed.proxy.help')
+      <a :href="homepage" target="_blank" class="block text-gray-500 border-t-2 py-3">{{
+        $t('feed.homepage')
       }}</a>
     </div>
   </div>
@@ -34,6 +34,7 @@
 
 <script>
   import TellshowMenuItem from './TellshowMenuItem';
+  import { homepage } from '@/../package.json';
 
   export default {
     name: 'TellshowMenu',
@@ -60,13 +61,9 @@
     },
     data() {
       return {
-        selection: this.selected
+        selection: this.selected,
+        homepage
       };
-    },
-    computed: {
-      proxyAccessUrl() {
-        return process.env.VUE_APP_RSS_PROXY_ACCESS;
-      }
     },
     methods: {
       itemClick(id) {

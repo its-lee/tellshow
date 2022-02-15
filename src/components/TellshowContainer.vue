@@ -8,12 +8,20 @@
       @itemClick="onItemClick"
     />
     <tellshow-content :items="feedItems" :loading="loading" />
+    <common-modal :showing="modalShowing" @close="modalShowing = false">
+      <h2 class="text-xl font-bold text-gray-900 mb-5">
+        {{ $t('feed.error') }}
+      </h2>
+      <p class="text-gray-500 mb-2">{{ $t('feed.proxy.help') }}</p>
+      <a :href="proxyAccessUrl" target="_blank" class="text-gray-500">{{ proxyAccessUrl }}</a>
+    </common-modal>
   </div>
 </template>
 
 <script>
   import TellshowMenu from './TellshowMenu.vue';
   import TellshowContent from './TellshowContent.vue';
+  import CommonModal from './common/CommonModal.vue';
   import { feeds, requestFeed } from '@/helpers/feeds';
   import { name as packageName } from '@/../package.json';
 
@@ -21,14 +29,16 @@
     name: 'TellshowContainer',
     components: {
       TellshowMenu,
-      TellshowContent
+      TellshowContent,
+      CommonModal
     },
     props: {},
     data() {
       return {
         loading: true,
         feed: Object.keys(feeds)[0],
-        feedItems: []
+        feedItems: [],
+        modalShowing: false
       };
     },
     computed: {
@@ -40,6 +50,9 @@
       },
       appName() {
         return packageName.charAt(0).toUpperCase() + packageName.slice(1);
+      },
+      proxyAccessUrl() {
+        return process.env.VUE_APP_RSS_PROXY_ACCESS;
       }
     },
     async created() {
@@ -63,6 +76,7 @@
         } catch (e) {
           console.error(e);
           this.feedItems = [];
+          this.modalShowing = true;
         } finally {
           this.loading = false;
         }
