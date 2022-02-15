@@ -8,10 +8,13 @@
     "morbid": "Morbid",
     "apology": "The Apology Line"
   },
+  "feed": {
+    "metadata": "Published on {date}",
+    "noDescription": ""
+  },
   "textFilter": {
     "placeholder": "Filter by title.."
   },
-  "description": "Published on {date} at {url}",
   "proxy": {
     "help": "No content? Visit the following URL to gain access:"
   },

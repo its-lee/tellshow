@@ -67,12 +67,21 @@
         this.loading = true;
         try {
           const feed = await requestFeed(this.feed);
-          this.feedItems = feed.items.map(item => ({
-            id: item.guid,
-            title: item.title,
-            content: this.$t('app.description', { date: item.pubDate, url: item.link }),
-            url: item.link
-          }));
+          this.feedItems = feed.items.map(item => {
+            const content = [
+              item.contentSnippet || this.$t('app.feed.noDescription'),
+              item.pubDate ? this.$t('app.feed.metadata', { date: item.pubDate }) : ''
+            ]
+              .filter(s => s)
+              .join('\n\n');
+
+            return {
+              id: item.guid,
+              title: item.title,
+              content,
+              url: item.link
+            };
+          });
         } catch (e) {
           console.error(e);
           this.feedItems = [];
