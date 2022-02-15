@@ -26,7 +26,7 @@
 
     <div class="flex-none hidden md:block py-3 px-3 text-left">
       <a :href="homepage" target="_blank" class="block text-gray-500 border-t-2 py-3">{{
-        $t('feed.homepage')
+        $t('app.homepage')
       }}</a>
     </div>
   </div>

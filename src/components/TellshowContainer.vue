@@ -10,9 +10,9 @@
     <tellshow-content :items="feedItems" :loading="loading" />
     <common-modal :showing="modalShowing" @close="modalShowing = false">
       <h2 class="text-xl font-bold text-gray-900 mb-5">
-        {{ $t('feed.error') }}
+        {{ $t('app.error') }}
       </h2>
-      <p class="text-gray-500 mb-2">{{ $t('feed.proxy.help') }}</p>
+      <p class="text-gray-500 mb-2">{{ $t('app.proxy.help') }}</p>
       <a :href="proxyAccessUrl" target="_blank" class="text-gray-500">{{ proxyAccessUrl }}</a>
     </common-modal>
   </div>
@@ -45,7 +45,7 @@
       menuItems() {
         return Object.keys(feeds).map(feed => ({
           id: feed,
-          label: this.$t(`feed.feeds.${feed}`)
+          label: this.$t(`app.feeds.${feed}`)
         }));
       },
       appName() {
@@ -70,7 +70,7 @@
           this.feedItems = feed.items.map(item => ({
             id: item.guid,
             title: item.title,
-            content: this.$t('feed.description', { date: item.pubDate, url: item.link }),
+            content: this.$t('app.description', { date: item.pubDate, url: item.link }),
             url: item.link
           }));
         } catch (e) {

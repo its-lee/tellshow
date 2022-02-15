@@ -6,7 +6,7 @@
         v-model="textFilter"
         type="text"
         class="shadow-sm border-gray-300 rounded-lg m-2 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 text-center"
-        :placeholder="$t('feed.textFilter.placeholder')"
+        :placeholder="$t('app.textFilter.placeholder')"
       />
       <common-list :items="filteredItems" />
     </template>
