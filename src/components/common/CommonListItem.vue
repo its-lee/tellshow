@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradient-to-r from-gray-400 to-gray-200 m-1 shadow-md b-1 border-gray-500">
+  <div class="bg-gradient-to-r from-gray-400 to-gray-300 m-1 shadow-md b-1 border-gray-500">
     <a v-if="url" :href="url" target="_blank" class="float-right pr-2 pt-2 font-bold uppercase">{{
       $t('commonComponents.listItem.view')
     }}</a>
