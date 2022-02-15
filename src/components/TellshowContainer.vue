@@ -60,6 +60,9 @@
             content: this.$t('feed.description', { date: item.pubDate, url: item.link }),
             url: item.link
           }));
+        } catch (e) {
+          console.error(e);
+          this.feedItems = [];
         } finally {
           this.loading = false;
         }
