@@ -38,8 +38,10 @@
     }),
     computed: {
       filteredItems() {
+        const textFilter = this.textFilter.toLowerCase();
+        // Check in multiple fields for the presence of the text filter
         return this.items.filter(item => {
-          return item.title.toLowerCase().includes(this.textFilter.toLowerCase());
+          return [item.title, item.content].some(field => field.toLowerCase().includes(textFilter));
         });
       }
     },
