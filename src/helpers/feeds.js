@@ -4,6 +4,7 @@ export const feeds = {
   theExploringSeries: 'https://anchor.fm/s/941e1d8/podcast/rss',
   wineAndCrime: 'https://audioboom.com/channels/4903845.rss',
   serial: 'https://feeds.simplecast.com/xl36XBC2',
+  hardcodeHistory: 'https://dchhaddendum.libsyn.com/rss',
   xkcd: 'https://xkcd.com/rss.xml',
   morbid: 'https://audioboom.com/channels/4997220.rss',
   apology: 'https://rss.art19.com/apology-line'
