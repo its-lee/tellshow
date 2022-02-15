@@ -1,9 +1,10 @@
 {
   "feeds": {
+    "theExploringSeries": "The Exploring Series",
+    "wineAndCrime": "Wine & Crime",
     "xkcd": "xkcd",
     "morbid": "Morbid",
-    "apology": "The Apology Line",
-    "wineAndCrime": "Wine & Crime"
+    "apology": "The Apology Line"
   },
   "textFilter": {
     "placeholder": "Filter by title.."
