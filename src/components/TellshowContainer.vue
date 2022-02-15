@@ -84,6 +84,7 @@
             };
           });
         } catch (e) {
+          /*eslint no-console: ["error", { allow: ["error"] }] */
           console.error(e);
           this.feedItems = [];
           this.modalShowing = true;
