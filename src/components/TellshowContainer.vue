@@ -36,7 +36,7 @@
     data() {
       return {
         loading: true,
-        feed: Object.keys(feeds)[0],
+        feed: this.parseFeedOrDefault(null),
         feedItems: [],
         modalShowing: false
       };
@@ -56,6 +56,10 @@
       }
     },
     async created() {
+      // Determine what feed to start on based on query parameters
+      const qps = new URLSearchParams(window.location.search);
+      this.feed = this.parseFeedOrDefault(qps.get('feed'));
+
       await this.refreshFeedItems();
     },
     methods: {
@@ -91,6 +95,9 @@
         } finally {
           this.loading = false;
         }
+      },
+      parseFeedOrDefault(feed) {
+        return Object.keys(feeds).includes(feed) ? feed : Object.keys(feeds)[0];
       }
     }
   };
