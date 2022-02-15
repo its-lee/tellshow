@@ -6,7 +6,7 @@
     <h3 v-if="title !== null" class="pl-2 pt-2 text-left font-bold uppercase text-gray-600">
       {{ title }}
     </h3>
-    <p class="pt-2 pl-2 pb-2 text-left text-gray-700 whitespace-pre">
+    <p class="pt-2 pl-2 pb-2 text-left text-gray-700" :class="preFormatted ? 'whitespace-pre' : ''">
       {{ content }}
     </p>
   </div>
@@ -33,6 +33,10 @@
       url: {
         type: String,
         default: ''
+      },
+      preFormatted: {
+        type: Boolean,
+        default: false
       }
     }
   };

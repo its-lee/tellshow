@@ -79,7 +79,8 @@
               id: item.guid,
               title: item.title,
               content,
-              url: item.link
+              url: item.link,
+              preFormatted: true
             };
           });
         } catch (e) {
