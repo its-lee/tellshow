@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: '/tellshow/',
   pluginOptions: {
     i18n: {
       locale: 'en-gb',
