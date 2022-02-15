@@ -3,7 +3,8 @@ import Parser from 'rss-parser';
 export const feeds = {
   xkcd: 'https://xkcd.com/rss.xml',
   morbid: 'https://audioboom.com/channels/4997220.rss',
-  apology: 'https://rss.art19.com/apology-line'
+  apology: 'https://rss.art19.com/apology-line',
+  wineAndCrime: 'https://audioboom.com/channels/4903845.rss'
 };
 
 const requestRss = async url => {

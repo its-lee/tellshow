@@ -2,7 +2,8 @@
   "feeds": {
     "xkcd": "xkcd",
     "morbid": "Morbid",
-    "apology": "The Apology Line"
+    "apology": "The Apology Line",
+    "wineAndCrime": "Wine & Crime"
   },
   "textFilter": {
     "placeholder": "Filter by title.."
