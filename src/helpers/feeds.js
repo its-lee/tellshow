@@ -23,3 +23,7 @@ export async function requestFeed(name) {
   const url = feeds[name];
   return await requestRss(`${process.env.VUE_APP_RSS_PROXY}/${url}`);
 }
+
+export function parseFeedOrDefault(feed) {
+  return Object.keys(feeds).includes(feed) ? feed : Object.keys(feeds)[0];
+}

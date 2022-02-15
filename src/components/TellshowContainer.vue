@@ -22,7 +22,7 @@
   import TellshowMenu from './TellshowMenu.vue';
   import TellshowContent from './TellshowContent.vue';
   import CommonModal from './common/CommonModal.vue';
-  import { feeds, requestFeed } from '@/helpers/feeds';
+  import { feeds, requestFeed, parseFeedOrDefault } from '@/helpers/feeds';
   import { name as packageName } from '@/../package.json';
 
   export default {
@@ -36,7 +36,7 @@
     data() {
       return {
         loading: true,
-        feed: this.parseFeedOrDefault(null),
+        feed: parseFeedOrDefault(null),
         feedItems: [],
         modalShowing: false
       };
@@ -58,7 +58,7 @@
     async created() {
       // Determine what feed to start on based on query parameters
       const qps = new URLSearchParams(window.location.search);
-      this.feed = this.parseFeedOrDefault(qps.get('feed'));
+      this.feed = parseFeedOrDefault(qps.get('feed'));
 
       await this.refreshFeedItems();
     },
@@ -95,9 +95,6 @@
         } finally {
           this.loading = false;
         }
-      },
-      parseFeedOrDefault(feed) {
-        return Object.keys(feeds).includes(feed) ? feed : Object.keys(feeds)[0];
       }
     }
   };
