@@ -4,7 +4,7 @@
 ![](https://erguotou520.github.io/vue-version-badge/vue2.x.svg)
 ![CI](https://github.com/Cygnut/tellshow/actions/workflows/ci.yml/badge.svg)
 
-Vue + Tailwind app for accessing RSS feeds. This isn't normally possible due to CORS, but is supported in this case by a proxy.
+Vue + Tailwind app for accessing RSS feeds. This isn't normally possible due to CORS, but is supported in this case by a proxy. Hosted here - https://cygnut.github.io/tellshow/.
 
 _Please note_ - before accessing the app, due to CORS, you will need to visit and request access via https://cors-anywhere.herokuapp.com/corsdemo.
 
