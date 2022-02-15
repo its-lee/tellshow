@@ -1,6 +1,9 @@
 <template>
   <div
-    class="-menu flex flex-col bg-gray-800 shadow-xl h-8 fixed bottom-0 md:top-0 md:relative md:h-screen z-10 w-full md:w-48 cursor-grab md:cursor-default overflow-x-auto md:overflow-x-hidden"
+    class="
+      -menu flex flex-col bg-gray-800 shadow-xl h-8 fixed bottom-0 md:top-0 md:relative md:h-screen z-10 w-full 
+      md:w-48 cursor-grab md:cursor-default overflow-x-auto md:overflow-x-hidden
+      "
   >
     <div class="flex-none hidden md:block md:left-0 md:top-0 md:py-4 content-center">
       <img v-if="iconUrl" :src="iconUrl" class="inline-block w-6 h-6 mr-3 mb-1" />
