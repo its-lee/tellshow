@@ -1,0 +1,14 @@
+{
+  "feeds": {
+    "xkcd": "xkcd",
+    "morbid": "Morbid",
+    "apology": "The Apology Line"
+  },
+  "textFilter": {
+    "placeholder": "Filter by title.."
+  },
+  "description": "Published on {date} at {url}",
+  "proxy": {
+    "help": "No content? Click here to gain access."
+  }
+}
