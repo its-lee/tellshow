@@ -2,12 +2,16 @@
   "homepage": "Source and attributions",
   "feeds": {
     "theExploringSeries": "The Exploring Series",
+    "comedyBangBang": "Comedy Bang Bang",
+    "hardcoreHistory": "Hardcore History",
+    "intentionallyBlank": "Intentionally Blank",
+    "smbc": "SMBC",
     "wineAndCrime": "Wine & Crime",
     "serial": "Serial",
-    "hardcoreHistory": "Hardcore History",
     "xkcd": "xkcd",
     "morbid": "Morbid",
     "apology": "The Apology Line",
+    "theConspirators": "The Conspirators",
     "intentionallyBroken": "Intentionally Broken"
   },
   "feed": {
