@@ -72,9 +72,11 @@
         try {
           const feed = await requestFeed(this.feed);
           this.feedItems = feed.items.map(item => {
+            const timestamp = Date.parse(item.pubDate);
+            const localisedDate = timestamp ? new Date(timestamp).toLocaleDateString() : '';
             const content = [
               item.contentSnippet || this.$t('app.feed.noDescription'),
-              item.pubDate ? this.$t('app.feed.metadata', { date: item.pubDate }) : ''
+              localisedDate ? this.$t('app.feed.metadata', { date: localisedDate }) : ''
             ]
               .filter(s => s)
               .join('\n\n');
