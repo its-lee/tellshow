@@ -14,7 +14,7 @@
     "fix": "vue-cli-service lint --max-warnings 0",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|ts|vue)' --locales './src/locales/**/*.json'",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"    
+    "deploy": "gh-pages -d dist"
   },
   "main": "index.js",
   "dependencies": {
