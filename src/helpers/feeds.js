@@ -7,9 +7,11 @@ export const feeds = {
   intentionallyBlank: 'https://feeds.buzzsprout.com/1796140.rss',
   smbc: 'https://www.smbc-comics.com/comic/rss',
   wineAndCrime: 'https://audioboom.com/channels/4903845.rss',
+  questionableContent: 'https://www.questionablecontent.net/QCRSS.xml',
   serial: 'https://feeds.simplecast.com/xl36XBC2',
   xkcd: 'https://xkcd.com/rss.xml',
   morbid: 'https://audioboom.com/channels/4997220.rss',
+  privateEye: 'https://www.private-eye.co.uk/rss/itunes/itunes.xml',
   apology: 'https://rss.art19.com/apology-line',
   theConspirators: 'https://audioboom.com/channels/4918522.rss',
   // We solely provide this item to demonstrate that we have some error handling set up, and that the relevant
