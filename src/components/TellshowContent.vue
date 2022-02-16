@@ -1,5 +1,7 @@
 <template>
-  <div class="main-content h-screen overflow-y-auto flex-1 bg-gray-100 md:mt-0 pb-8 md:pb-0">
+  <div
+    class="main-content h-screen overflow-y-auto flex-1 bg-gray-100 md:mt-0 pt-8 md:pt-0 md:pb-0"
+  >
     <common-spinner v-if="loading" />
     <template v-else>
       <input
