@@ -234,7 +234,7 @@ To allow jest to capture and report on code coverage, at the very least we need 
 ```json
 {
   "collectCoverage": true,
-  "collectCoverageFrom": ["**/*.{js,vue}", "!**/node_modules/**", "!<rootDir>/dist/**"]
+  "collectCoverageFrom": ["**/*.{js,ts,vue}", "!**/node_modules/**", "!<rootDir>/dist/**"]
 }
 ```
 
@@ -242,6 +242,6 @@ If you wish to place your tests next to their subjects, you'll need to add the f
 
 ```json
 {
-  "testMatch": ["**/*.spec.js"]
+  "testMatch": ["**/*.spec.js","**/*.spec.ts"]
 }
 ```
