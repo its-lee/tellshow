@@ -7,7 +7,10 @@ export const feeds = {
   hardcoreHistory: 'https://dchhaddendum.libsyn.com/rss',
   xkcd: 'https://xkcd.com/rss.xml',
   morbid: 'https://audioboom.com/channels/4997220.rss',
-  apology: 'https://rss.art19.com/apology-line'
+  apology: 'https://rss.art19.com/apology-line',
+  // We solely provide this item to demonstrate that we have some error handling set up, and that the relevant
+  // modal is rendered in this situation!
+  intentionallyBroken: 'https://intentionally-broken.xyz'
 };
 
 const requestRss = async url => {
