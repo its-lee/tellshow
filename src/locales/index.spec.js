@@ -1,31 +1,6 @@
-import { readdirSync, readFileSync } from 'fs';
-import path from 'path';
+import messages from './index.js';
 
 const defaultLocale = 'en-gb';
-
-// We can't load all locales using the webpack technique via require.context in index.js
-// as the unit tests aren't run post-webpack build. So we'll load them equivalently using
-// fs.
-const loadLocalesWithoutWebpack = () => {
-  const localeDirs = readdirSync(__dirname, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name);
-
-  const locales = {};
-  for (const localeDir of localeDirs) {
-    locales[localeDir] = {};
-
-    const localePath = path.join(__dirname, localeDir);
-    for (const langFile of readdirSync(localePath)) {
-      const content = readFileSync(path.join(localePath, langFile));
-      const name = langFile.split('.')[0];
-      locales[localeDir][name] = JSON.parse(content);
-    }
-  }
-  return locales;
-};
-
-const locales = loadLocalesWithoutWebpack();
 
 const findMismatchesFrom = (source, target, parentKeyPath = null) => {
   let mismatches = [];
@@ -69,11 +44,11 @@ expect.extend({
 });
 
 describe('locales', () => {
-  const knownLocale = locales[defaultLocale];
+  const knownLocale = messages[defaultLocale];
 
-  Object.entries(locales).forEach(([locale, messages]) => {
+  Object.entries(messages).forEach(([locale, localeMessages]) => {
     it(`is set up so that the ${locale} locale have the same keys as the default locale (${defaultLocale})`, () => {
-      expect(messages).toMatchStructure(knownLocale);
+      expect(localeMessages).toMatchStructure(knownLocale);
     });
   });
 });
