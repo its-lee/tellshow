@@ -1,4 +1,5 @@
 import Parser from 'rss-parser';
+import i18n from '@/i18n';
 
 export const feeds = {
   theExploringSeries: 'https://anchor.fm/s/941e1d8/podcast/rss',
@@ -35,4 +36,23 @@ export async function requestFeed(name) {
 
 export function parseFeedOrDefault(feed) {
   return Object.keys(feeds).includes(feed) ? feed : Object.keys(feeds)[0];
+}
+
+export function convertFeedItemToListItem(item) {
+  const timestamp = Date.parse(item.pubDate);
+  const localisedDate = timestamp ? new Date(timestamp).toLocaleDateString() : '';
+  const content = [
+    item.contentSnippet || i18n.t('app.feed.noDescription'),
+    localisedDate ? i18n.t('app.feed.metadata', { date: localisedDate }) : ''
+  ]
+    .filter(s => s)
+    .join('\n\n');
+
+  return {
+    id: item.guid,
+    title: item.title,
+    content,
+    url: item.link,
+    preFormatted: true
+  };
 }

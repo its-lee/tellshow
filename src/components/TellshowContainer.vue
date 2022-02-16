@@ -22,7 +22,12 @@
   import TellshowMenu from './TellshowMenu.vue';
   import TellshowContent from './TellshowContent.vue';
   import CommonModal from './common/CommonModal.vue';
-  import { feeds, requestFeed, parseFeedOrDefault } from '@/helpers/feeds';
+  import {
+    feeds,
+    requestFeed,
+    parseFeedOrDefault,
+    convertFeedItemToListItem
+  } from '@/helpers/feeds';
   import { name as packageName } from '@/../package.json';
 
   export default {
@@ -71,24 +76,7 @@
         this.loading = true;
         try {
           const feed = await requestFeed(this.feed);
-          this.feedItems = feed.items.map(item => {
-            const timestamp = Date.parse(item.pubDate);
-            const localisedDate = timestamp ? new Date(timestamp).toLocaleDateString() : '';
-            const content = [
-              item.contentSnippet || this.$t('app.feed.noDescription'),
-              localisedDate ? this.$t('app.feed.metadata', { date: localisedDate }) : ''
-            ]
-              .filter(s => s)
-              .join('\n\n');
-
-            return {
-              id: item.guid,
-              title: item.title,
-              content,
-              url: item.link,
-              preFormatted: true
-            };
-          });
+          this.feedItems = feed.items.map(convertFeedItemToListItem);
         } catch (e) {
           /*eslint no-console: ["error", { allow: ["error"] }] */
           console.error(e);
