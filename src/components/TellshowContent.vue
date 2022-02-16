@@ -4,12 +4,14 @@
   >
     <common-spinner v-if="loading" />
     <template v-else>
-      <input
-        v-model="textFilter"
-        type="text"
-        class="shadow-sm border-gray-300 rounded-lg m-2 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 text-center"
-        :placeholder="$t('app.textFilter.placeholder')"
-      />
+      <div class="bg-gray-800">
+        <input
+          v-model="textFilter"
+          type="text"
+          class="shadow-sm rounded-lg m-2 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 text-center w-6/12"
+          :placeholder="$t('app.textFilter.placeholder')"
+        />
+      </div>
       <common-list :items="filteredItems" />
     </template>
   </div>
