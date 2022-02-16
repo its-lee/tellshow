@@ -4,7 +4,7 @@
   >
     <common-spinner v-if="loading" />
     <template v-else>
-      <div class="bg-gray-800">
+      <div class="bg-gray-800 w-full">
         <input
           v-model="textFilter"
           type="text"
