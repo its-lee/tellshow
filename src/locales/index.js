@@ -1,9 +1,8 @@
 import { readdirSync, readFileSync } from 'fs';
 import path from 'path';
 
-const messages = {};
-
-if (process.env.JEST_WORKER_ID) {
+const loadViaFs = () => {
+  const messages = {};
   // We can't load all locales using the webpack technique via require.context in index.js
   // as the unit tests aren't run post-webpack build. So we'll load them equivalently using fs.
   readdirSync(__dirname, { withFileTypes: true })
@@ -20,7 +19,12 @@ if (process.env.JEST_WORKER_ID) {
         messages[locale][name] = JSON.parse(content);
       });
     });
-} else {
+  return messages;
+};
+
+const loadViaWebpack = () => {
+  const messages = {};
+
   // Require all json files in subfolders, recursively
   const files = require.context('.', true, /^.*\.json$/);
 
@@ -36,6 +40,8 @@ if (process.env.JEST_WORKER_ID) {
     // Add the i18n file content to the final set of messages
     messages[locale][name] = files(file);
   });
-}
 
-export default messages;
+  return messages;
+};
+
+export default process.env.JEST_WORKER_ID ? loadViaFs() : loadViaWebpack();
