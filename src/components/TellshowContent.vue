@@ -1,7 +1,7 @@
 <template>
-  <div class="main-content h-screen flex-1 bg-gray-100 md:mt-0 pt-8 md:pt-0 md:pb-0">
+  <div class="main-content h-screen flex-1 bg-gray-100 md:mt-0 pt-8 md:pt-0 md:pb-0 w-full">
     <div class="flex flex-col h-full">
-      <div class="bg-gray-800 w-full">
+      <div class="bg-gray-800">
         <input
           v-model="textFilter"
           type="text"
