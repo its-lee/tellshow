@@ -7,7 +7,7 @@
       {{ title }}
     </h3>
     <p
-      class="pt-2 pl-2 pb-2 text-left text-gray-700"
+      class="pt-2 px-2 pb-2 text-left text-gray-700 break-words"
       :class="preFormatted ? 'whitespace-pre-line' : ''"
     >
       {{ content }}
