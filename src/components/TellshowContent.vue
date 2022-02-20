@@ -10,7 +10,11 @@
         />
       </div>
       <common-spinner v-if="loading" />
-      <common-list v-else class="overflow-y-auto grow overflow-x-hidden" :items="filteredItems" />
+      <common-list
+        v-else
+        class="overflow-y-auto grow overflow-x-hidden md:overflow-x-visible"
+        :items="filteredItems"
+      />
     </div>
   </div>
 </template>
